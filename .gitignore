@@ -8,3 +8,4 @@ uploads/
 bin/
 script/
 build/
+config.prod.yaml

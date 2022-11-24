@@ -10,12 +10,13 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/gin-gonic/gin"
-	"github.com/urfave/cli/v2"
-	_ "github.com/urfave/cli/v2"
 	"go-chat/config"
 	"go-chat/internal/pkg/logger"
 	_ "go-chat/internal/pkg/validation"
+
+	"github.com/gin-gonic/gin"
+	"github.com/urfave/cli/v2"
+	_ "github.com/urfave/cli/v2"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -28,7 +29,7 @@ func main() {
 	// 设置参数
 	cmd.Flags = []cli.Flag{
 		// 配置文件参数
-		&cli.StringFlag{Name: "config", Aliases: []string{"c"}, Value: "./config.yaml", Usage: "配置文件路径", DefaultText: "./config.yaml"},
+		&cli.StringFlag{Name: "config", Aliases: []string{"c"}, Value: "~/config.yaml", Usage: "配置文件路径", DefaultText: "~/config.yaml"},
 
 		// 端口号参数
 		&cli.IntFlag{Name: "port", Aliases: []string{"p"}, Value: 9503, Usage: "设置端口号", DefaultText: "9503"},
